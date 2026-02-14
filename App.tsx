@@ -1,18 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
-import { PageType, Employee, Shift, LeaveHistory, BotAlias, LeaveConfig, BotSettings } from './types';
-import Dashboard from './pages/Dashboard';
-import Employees from './pages/Employees';
-import Shifts from './pages/Shifts';
-import History from './pages/History';
-import BotIntelligence from './pages/BotIntelligence';
-import Settings from './pages/Settings';
-import Respon from './pages/Respon';
-import Simulator from './pages/Simulator';
-import BotConnection from './pages/BotConnection';
-import Deployment from './pages/Deployment';
-import Login from './pages/Login';
+import Sidebar from './components/Sidebar.tsx';
+import { PageType, Employee, Shift, LeaveHistory, BotAlias, LeaveConfig, BotSettings } from './types.ts';
+import Dashboard from './pages/Dashboard.tsx';
+import Employees from './pages/Employees.tsx';
+import Shifts from './pages/Shifts.tsx';
+import History from './pages/History.tsx';
+import BotIntelligence from './pages/BotIntelligence.tsx';
+import Settings from './pages/Settings.tsx';
+import Respon from './pages/Respon.tsx';
+import Simulator from './pages/Simulator.tsx';
+import BotConnection from './pages/BotConnection.tsx';
+import Deployment from './pages/Deployment.tsx';
+import Login from './pages/Login.tsx';
 import { createClient } from '@supabase/supabase-js';
 import { Download, Monitor, Smartphone, X, Sparkles } from 'lucide-react';
 import { 
@@ -21,7 +21,7 @@ import {
   MOCK_HISTORI_7_HARI, 
   MOCK_BOT_ALIASES, 
   MOCK_LEAVE_CONFIGS 
-} from './constants';
+} from './constants.tsx';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,7 +35,6 @@ const App: React.FC = () => {
     const handleBeforeInstallPrompt = (e: any) => {
       e.preventDefault();
       setDeferredPrompt(e);
-      // Tampilkan banner hanya jika user sudah login agar tidak mengganggu landing page
       if (isAuthenticated) {
         setShowInstallBanner(true);
       }
@@ -229,7 +228,6 @@ const App: React.FC = () => {
         onLogout={handleLogout} 
       />
       <main className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
-        {/* PWA Install Banner (Beautiful Redesign) */}
         {showInstallBanner && (
           <div className="mx-12 mt-6 animate-in slide-in-from-top-10 duration-700">
              <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 p-1 rounded-[2.5rem] shadow-2xl shadow-indigo-500/30">
