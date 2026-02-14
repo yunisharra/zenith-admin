@@ -1,18 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar.tsx';
-import { PageType, Employee, Shift, LeaveHistory, BotAlias, LeaveConfig, BotSettings } from './types.ts';
-import Dashboard from './pages/Dashboard.tsx';
-import Employees from './pages/Employees.tsx';
-import Shifts from './pages/Shifts.tsx';
-import History from './pages/History.tsx';
-import BotIntelligence from './pages/BotIntelligence.tsx';
-import Settings from './pages/Settings.tsx';
-import Respon from './pages/Respon.tsx';
-import Simulator from './pages/Simulator.tsx';
-import BotConnection from './pages/BotConnection.tsx';
-import Deployment from './pages/Deployment.tsx';
-import Login from './pages/Login.tsx';
+import Sidebar from './components/Sidebar';
+import { PageType, Employee, Shift, LeaveHistory, BotAlias, LeaveConfig, BotSettings } from './types';
+import Dashboard from './pages/Dashboard';
+import Employees from './pages/Employees';
+import Shifts from './pages/Shifts';
+import History from './pages/History';
+import BotIntelligence from './pages/BotIntelligence';
+import Settings from './pages/Settings';
+import Respon from './pages/Respon';
+import Simulator from './pages/Simulator';
+import BotConnection from './pages/BotConnection';
+import Deployment from './pages/Deployment';
+import Login from './pages/Login';
 import { createClient } from '@supabase/supabase-js';
 import { Download, Monitor, Smartphone, X, Sparkles } from 'lucide-react';
 import { 
@@ -21,7 +21,7 @@ import {
   MOCK_HISTORI_7_HARI, 
   MOCK_BOT_ALIASES, 
   MOCK_LEAVE_CONFIGS 
-} from './constants.tsx';
+} from './constants';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
