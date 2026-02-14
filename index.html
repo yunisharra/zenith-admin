@@ -19,6 +19,7 @@
         font-family: 'Inter', sans-serif; 
         background-color: #020617;
         margin: 0;
+        overflow-x: hidden;
       }
       ::-webkit-scrollbar { width: 6px; height: 6px; }
       ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.1); }
@@ -40,21 +41,7 @@
         animation: fadeOut 0.5s ease-in 2s forwards;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.95.3",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
-  }
-}
-</script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="text-slate-900">
     <div id="splash">
@@ -67,8 +54,8 @@
 
     <div id="root"></div>
 
-    <!-- VITE ENTRY POINT - Menggunakan path relatif agar aman di semua environment -->
-    <script type="module" src="./index.tsx"></script>
+    <!-- ENTRY POINT VITE -->
+    <script type="module" src="/index.tsx"></script>
 
     <script>
       if ('serviceWorker' in navigator) {
