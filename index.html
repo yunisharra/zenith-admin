@@ -19,16 +19,15 @@
         font-family: 'Inter', sans-serif; 
         background-color: #020617;
         margin: 0;
-        overflow-x: hidden;
+        overflow: hidden;
       }
-      ::-webkit-scrollbar { width: 6px; height: 6px; }
-      ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.1); }
-      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
       
       @keyframes fadeOut {
-        from { opacity: 1; }
-        to { opacity: 0; visibility: hidden; }
+        0% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; visibility: hidden; pointer-events: none; }
       }
+      
       #splash {
         position: fixed;
         inset: 0;
@@ -38,12 +37,11 @@
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        animation: fadeOut 0.5s ease-in 2s forwards;
+        animation: fadeOut 2.5s forwards;
       }
     </style>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="text-slate-900">
+  <body>
     <div id="splash">
        <div style="padding: 2rem; background: linear-gradient(to bottom right, #6366f1, #a855f7); border-radius: 2rem; margin-bottom: 1.5rem; box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -54,7 +52,7 @@
 
     <div id="root"></div>
 
-    <!-- ENTRY POINT VITE -->
+    <!-- ENTRY POINT VITE (Jangan diubah path-nya) -->
     <script type="module" src="/index.tsx"></script>
 
     <script>
