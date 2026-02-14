@@ -58,8 +58,11 @@ const Settings: React.FC<SettingsProps> = ({ configs, setConfigs, userEmail }) =
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = (e: ProgressEvent<FileReader>) => {
-      const result = e.target?.result;
+    reader.onload = (e) => {
+      // Perbaikan error TS18047: Cek target secara eksplisit
+      if (!e.target || !e.target.result) return;
+      
+      const result = e.target.result;
       if (typeof result !== 'string') return;
       
       try {
