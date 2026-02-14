@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Save, Clock, ShieldAlert, Zap, CheckCircle, DownloadCloud, UploadCloud, FileJson, AlertTriangle, RefreshCw } from 'lucide-react';
 import { LeaveConfig } from '../types';
@@ -59,7 +58,7 @@ const Settings: React.FC<SettingsProps> = ({ configs, setConfigs, userEmail }) =
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = (e: ProgressEvent<FileReader>) => {
       const result = e.target?.result;
       if (typeof result !== 'string') return;
       
