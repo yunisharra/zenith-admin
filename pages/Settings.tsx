@@ -31,7 +31,6 @@ const Settings: React.FC<SettingsProps> = ({ configs, setConfigs, userEmail }) =
     }, 1000);
   };
 
-  // FUNGSI BACKUP (DOWNLOAD)
   const handleExportData = () => {
     const getDataKey = (key: string) => `zenith_user_${userEmail.replace(/[@.]/g, '_')}_${key}`;
     
@@ -55,15 +54,17 @@ const Settings: React.FC<SettingsProps> = ({ configs, setConfigs, userEmail }) =
     URL.revokeObjectURL(url);
   };
 
-  // FUNGSI RESTORE (UPLOAD)
   const handleImportData = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     const reader = new FileReader();
     reader.onload = (e) => {
+      const result = e.target?.result;
+      if (typeof result !== 'string') return;
+      
       try {
-        const data = JSON.parse(e.target.result as string);
+        const data = JSON.parse(result);
         const getDataKey = (key: string) => `zenith_user_${userEmail.replace(/[@.]/g, '_')}_${key}`;
 
         if (confirm(`Peringatan: Mengimpor data akan menimpa semua data saat ini untuk akun ${userEmail}. Lanjutkan?`)) {
@@ -110,7 +111,6 @@ const Settings: React.FC<SettingsProps> = ({ configs, setConfigs, userEmail }) =
         </div>
       </header>
 
-      {/* BACKUP & RESTORE SECTION */}
       <section className="bg-slate-900 rounded-[3.5rem] p-10 text-white overflow-hidden relative shadow-2xl">
          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
          <div className="relative z-10">
