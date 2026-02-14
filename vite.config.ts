@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
+    // Ini sangat penting agar process.env.API_KEY tidak bikin crash di browser
     'process.env': {}
   },
   build: {
