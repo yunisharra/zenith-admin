@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zenith Admin Panel</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     
     <!-- PWA Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,6 +19,7 @@
       body { 
         font-family: 'Inter', sans-serif; 
         background-color: #020617;
+        margin: 0;
       }
       ::-webkit-scrollbar { width: 6px; height: 6px; }
       ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.1); }
@@ -43,13 +44,15 @@
   <script type="importmap">
 {
   "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
     "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.39.7"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.95.3",
+    "recharts": "https://esm.sh/recharts@^3.7.0"
   }
 }
 </script>
@@ -59,14 +62,14 @@
        <div style="padding: 2rem; background: linear-gradient(to bottom right, #6366f1, #a855f7); border-radius: 2rem; margin-bottom: 1.5rem; box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
        </div>
-       <h1 style="color: white; font-weight: 900; font-style: italic; font-size: 1.5rem; letter-spacing: -0.05em; text-transform: uppercase;">ZENITH<span style="color: #6366f1;">.</span></h1>
+       <h1 style="color: white; font-weight: 900; font-style: italic; font-size: 1.5rem; letter-spacing: -0.05em; text-transform: uppercase; margin: 0;">ZENITH<span style="color: #6366f1;">.</span></h1>
        <p style="color: #475569; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.3em; margin-top: 0.5rem; text-transform: uppercase;">Initializing Secure Portal</p>
     </div>
 
     <div id="root"></div>
 
-    <!-- MAIN ENTRY POINT -->
-    <script type="module" src="index.tsx"></script>
+    <!-- VITE ENTRY POINT -->
+    <script type="module" src="/index.tsx"></script>
 
     <!-- PWA Service Worker Registration -->
     <script>
